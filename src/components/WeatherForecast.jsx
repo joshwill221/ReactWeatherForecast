@@ -1,15 +1,14 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBolt,
-  faCloudShowersHeavy,
-  faCloudSunRain,
-  faSnowflake,
-  faSmog,
-  faSun,
-  faCloudSun,
-  faCloud,
-} from "@fortawesome/free-solid-svg-icons";
+
+import cloudy from '../img/cloudy.svg';
+import thunder from '../img/thunder.svg';
+import rainyHeavy from '../img/rainy-6.svg';
+import rainyLight from '../img/rainy-3.svg';
+import snowy from '../img/snowy-6.svg';
+import smog from '../img/cloudy-day-1.svg';
+import sunny from '../img/day.svg';
+import cloudSun from '../img/cloudy-day-3.svg';
+
 
 const WeatherForecast = (props) => {
 
@@ -20,13 +19,15 @@ const WeatherForecast = (props) => {
   return (
     <div className="cards">
       <h1>{day}</h1>
-      <h5 className="py-4">
-        <FontAwesomeIcon
+      <h5>
+      {/* <h5 className="py-4"> */}
+        {/* <FontAwesomeIcon
           icon={getWeatherIcons(props.icon)}
           size="6x"
           style={{ color: "Grey" }}
           fixedWidth
-        />
+        /> */}
+        <img src={getWeatherIcons(props.icon)} height="200" alt="clouds" />
       </h5>
       <h4 className="py-3 description">{props.description}</h4>
 
@@ -48,40 +49,40 @@ function getWeatherIcons(rangeId) {
 
   switch (true) {
     case rangeId >= 200 && rangeId <= 232:
-      icon = faBolt;
+      icon = thunder;
       break;
     case rangeId >= 300 && rangeId <= 321:
-      icon = faCloudShowersHeavy;
+      icon = rainyHeavy;
       break;
     case rangeId >= 500 && rangeId <= 504:
-      icon = faCloudSunRain;
+      icon = rainyLight;
       break;
     case rangeId === 511:
-      icon = faSnowflake;
+      icon = snowy;
       break;
     case rangeId >= 520 && rangeId <= 531:
-      icon = faCloudShowersHeavy;
+      icon = rainyHeavy;
       break;
     case rangeId >= 600 && rangeId <= 622:
-      icon = faSnowflake;
+      icon = snowy;
       break;
     case rangeId >= 701 && rangeId <= 781:
-      icon = faSmog;
+      icon = smog;
       break;
     case rangeId === 800:
-      icon = faSun;
+      icon = sunny;
       break;
     case rangeId === 801:
-      icon = faCloudSun;
+      icon = cloudSun;
       break;
     case rangeId === 802:
-      icon = faCloud;
+      icon = cloudy;
       break;
     case rangeId >= 803 && rangeId <= 804:
-      icon = faCloud;
+      icon = cloudy;
       break;
     default:
-      icon = faCloudSun;
+      icon = cloudSun;
   }
 
   return icon;
