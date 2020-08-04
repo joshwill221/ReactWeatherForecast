@@ -18,8 +18,8 @@ const WeatherForecast = (props) => {
 
   return (
     <div className="cards">
-      <h1>{day}</h1>
-      <h5>
+      <h1 className="card-heading">{day}</h1>
+      <h5 className="card-icon">
       {/* <h5 className="py-4"> */}
         {/* <FontAwesomeIcon
           icon={getWeatherIcons(props.icon)}
@@ -27,9 +27,9 @@ const WeatherForecast = (props) => {
           style={{ color: "Grey" }}
           fixedWidth
         /> */}
-        <img src={getWeatherIcons(props.icon)} height="200" alt="clouds" />
+        <img src={getWeatherIcons(props.icon)} height="200" alt="weather icon" />
       </h5>
-      <h4 className="py-3 description">{props.description}</h4>
+      <h4 className="description">{props.description}</h4>
 
       <h1 className="py-2">{Math.round(props.temp)}&deg;</h1>
       <h3>

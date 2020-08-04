@@ -7,9 +7,7 @@ body {
 }
 
 .container {
-  /* Github pages center fix */
-  margin: 1rem, auto;
-  /* margin: 1rem 0; */
+  margin: 1rem auto;
 
   display: grid;
   gap: 1rem;
@@ -48,6 +46,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.card-heading, .card-icon {
+  margin-bottom: 0;
+}
+
+.description {
+  padding: 0 0 1rem 0;
 }
 
 .cards:hover {
