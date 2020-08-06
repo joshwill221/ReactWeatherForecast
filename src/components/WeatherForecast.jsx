@@ -12,7 +12,7 @@ import cloudSun from '../img/cloudy-day-3.svg';
 
 const WeatherForecast = (props) => {
 
-  // date_time is in seconds not milliseconds
+  // convert date_time from seconds to milliseconds
   const date = new Date(props.date_time * 1000);
   const day = getWeekDay(date);
 
